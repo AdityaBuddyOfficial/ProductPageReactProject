@@ -1,6 +1,6 @@
 const navData={
     companyLogo:"༖",
-    companyName:"TPG Products Services",
+    companyName:"Adi Products Services",
     searchLogo:"🔍",
     placeholder:"Search Products"
 }

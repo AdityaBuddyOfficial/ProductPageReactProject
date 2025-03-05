@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from './ProductCard';
 
-const CarouselSlider = ({ productData,productCms}:any) => {
+const CarouselSlider = ({ productData,productCms,onclickProductId}:any) => {
 
     var settings = {
         dots: true,
@@ -18,7 +18,7 @@ const CarouselSlider = ({ productData,productCms}:any) => {
   return (
     <Slider  {...settings} >
         {productData.map((productData:any)=>
-(<ProductCard data={productData} productCms={productCms} key={productData.id}/>)
+(<ProductCard data={productData} productCms={productCms} key={productData.id} onclickProductId={onclickProductId}/>)
    
           )}
 
