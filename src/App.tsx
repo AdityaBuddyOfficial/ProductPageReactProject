@@ -11,32 +11,37 @@ import { useSearchHook } from "./Services/useSearchHook";
 import ProductCardData from "./Api Data/Product/ProductCardData";
 import { useAddedCart } from "./Services/useAddedProduct";
 
-
 function App() {
-const [searchInput,setSearchInput]=useState("");
-console.log("🚀 ~ App ~ searchInput:", searchInput)
-const[id,setId]=useState("")
+  const [searchInput, setSearchInput] = useState("");
+  console.log("🚀 ~ App ~ searchInput:", searchInput);
+  const [id, setId] = useState("");
 
-function onclickProductId(id:any)
-{
-  console.log("🚀 ~ App ~ id:", id)
-  setId(id)
-}
+  function onclickProductId(id: any) {
+    console.log("🚀 ~ App ~ id:", id);
+    setId(id);
+  }
 
-  const cartAddedData=useAddedCart(id,ProductCardData)
-  console.log("🚀 ~ App ~ cartmeDalaHuaData:", cartAddedData)
+  const cartAddedDataHookData = useAddedCart(id, ProductCardData);
+  const [cartAddedData, setTempData] = useState(cartAddedDataHookData);
 
-const {productData}=useSearchHook(searchInput,ProductCardData)
+  console.log("🚀 ~ App ~ cartmeDalaHuaData:", cartAddedData);
+
+  const { productData } = useSearchHook(searchInput, ProductCardData);
   return (
     <>
-  
-      <Nav navCms={navData} setSearchInput={setSearchInput} searchInput={searchInput}/>
-      <CarouselSlider productData={productData} productCms={CartCms} onclickProductId={onclickProductId}/>
-      <CartPage cartAddedData={cartAddedData} />
+      <Nav
+        navCms={navData}
+        setSearchInput={setSearchInput}
+        searchInput={searchInput}
+      />
+      <CarouselSlider
+        productData={productData}
+        productCms={CartCms}
+        onclickProductId={onclickProductId}
+      />
+      <CartPage cartAddedData={cartAddedData} setTempData={setTempData} />
     </>
   );
 }
-
-
 
 export default App;
