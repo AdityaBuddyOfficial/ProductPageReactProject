@@ -21,8 +21,10 @@ function App() {
     setId(id);
   }
 
-  const cartAddedDataHookData = useAddedCart(id, ProductCardData);
-  const [cartAddedData, setTempData] = useState(cartAddedDataHookData);
+  // const cartAddedDataHookData = useAddedCart(id, ProductCardData);
+  // const [cartAddedData, setTempData] = useState(cartAddedDataHookData);
+
+  const cartAddedData = useAddedCart(id, ProductCardData);
 
   console.log("🚀 ~ App ~ cartmeDalaHuaData:", cartAddedData);
 
@@ -39,7 +41,7 @@ function App() {
         productCms={CartCms}
         onclickProductId={onclickProductId}
       />
-      <CartPage cartAddedData={cartAddedData} setTempData={setTempData} />
+      <CartPage cartAddedData={cartAddedData} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const QuantityButton = ({ key, data, setTempData }: any) => {
+const QuantityButton = ({ key, data }: any) => {
   console.log("🚀 ~ QuantityButton inside the counter ~ e:", data);
   const [counter, setCounter] = useState(1);
   const [updatedData, setUpdatedData] = useState(data);
@@ -15,6 +15,7 @@ const QuantityButton = ({ key, data, setTempData }: any) => {
   };
 
   const decrementHandler = () => {
+    if (counter >= 1) return;
     setCounter((prevCounter) => {
       const newCounter = prevCounter - 1;
       updateData(newCounter);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import QuantityButton from "./QuantityButton";
 
-const CartPage = ({ cartAddedData, setTempData }: any) => {
+const CartPage = ({ cartAddedData }: any) => {
   console.log("🚀 ~ CartPage ~ cartAddedData in the map:", cartAddedData);
   const itemInCart = cartAddedData?.length;
 
@@ -71,7 +71,7 @@ const CartPage = ({ cartAddedData, setTempData }: any) => {
                     justifyContent: "center",
                   }}
                 >
-                  <QuantityButton data={e} setTempData={setTempData} />
+                  <QuantityButton data={e} />
                 </td>
                 <td style={{ padding: "10px" }}>{e.totalPrice}</td>
               </tr>
