@@ -3,7 +3,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "./ProductCard";
 
-const CarouselSlider = ({ productData, productCms, onclickProductId }: any) => {
+const CarouselSlider = ({
+  productData,
+  productCms,
+  onclickProductId,
+  handleAddCartData,
+}: any) => {
   var settings = {
     dots: true,
     infinite: false,
@@ -20,6 +25,7 @@ const CarouselSlider = ({ productData, productCms, onclickProductId }: any) => {
           productCms={productCms}
           key={productData.id}
           onclickProductId={onclickProductId}
+          handleAddCartData={handleAddCartData}
         />
       ))}
     </Slider>

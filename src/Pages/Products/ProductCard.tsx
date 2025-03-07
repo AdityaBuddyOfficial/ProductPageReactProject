@@ -1,6 +1,11 @@
 import React from "react";
 
-const ProductCard = ({ data, productCms, onclickProductId }: any) => {
+const ProductCard = ({
+  data,
+  productCms,
+  onclickProductId,
+  handleAddCartData,
+}: any) => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
@@ -40,7 +45,9 @@ const ProductCard = ({ data, productCms, onclickProductId }: any) => {
               border: "none",
               cursor: "pointer",
             }}
-            onClick={(e) => onclickProductId(data.id)}
+            onClick={(e) => {
+              onclickProductId(data.id);
+            }}
           >
             {productCms?.buy}
           </button>

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import QuantityButton from "./QuantityButton";
+import { useAppSelector } from "../../ReduxStore/hooks";
 
-const CartPage = ({ cartAddedData }: any) => {
-  console.log("🚀 ~ CartPage ~ cartAddedData in the map:", cartAddedData);
+const CartPage = () => {
+  const cartAddedData = useAppSelector((state: any) => state.cartData);
+
+  // console.log("🚀 ~ CartPage ~ cartAddedData in the map:", cartAddedData.data);
+
   const itemInCart = cartAddedData?.length;
 
   return (

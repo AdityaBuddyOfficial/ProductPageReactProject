@@ -15,7 +15,7 @@ const QuantityButton = ({ key, data }: any) => {
   };
 
   const decrementHandler = () => {
-    if (counter >= 1) return;
+    if (counter <= 1) return;
     setCounter((prevCounter) => {
       const newCounter = prevCounter - 1;
       updateData(newCounter);
